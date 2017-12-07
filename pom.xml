@@ -3,8 +3,8 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>maven</artifactId>
+    <groupId>org.gigatron4624</groupId>
+    <artifactId>Lesson1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <url>https://mvnrepository.com/artifact/commons-codec/commons-codec</url>
     <dependencies>
