@@ -1,3 +1,4 @@
+package org.gigatron4624;
 // This program simply checks if the secure hash algorithms yield the correct output for all input strings.
 import static org.apache.commons.codec.digest.DigestUtils.sha1Hex;
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
