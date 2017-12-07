@@ -1,27 +1,41 @@
-import static org.apache.commons.codec.digest.DigestUtils.*;
-public class Lesson1A extends Lesson1{
-    public static boolean SH1LC(String s){
-        return hexus1(s).length() == 40;
-    } public static boolean SH256LC(String s){
-        return hexus256(s).length() == 64;
-    } public static boolean SH384LC(String s){
-        return hexus384(s).length() == 96;
-    } public static boolean SH512LC(String s){
-        return hexus512(s).length() == 128;
-    } public static void HashCheck(String s){
+// This program simply checks if the secure hash algorithms yield the correct output for all input strings.
+import static org.apache.commons.codec.digest.DigestUtils.sha1Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha384Hex;
+import static org.apache.commons.codec.digest.DigestUtils.sha512Hex;
+// all secure hash algorithms are imported from the Commons Codec repository.
+
+public class Lesson1A {
+    private boolean SH1LC(String s){
+        return sha1Hex(s).length() == 40; // checks if SHA-1 hash has 40 hexadecimal bytes, or 160 bits
+    }
+    private boolean SH256LC(String s){
+        return sha256Hex(s).length() == 64; // checks if SHA-1 hash has 64 hexadecimal bytes, or 256 bits
+    }
+    private boolean SH384LC(String s){
+        return sha384Hex(s).length() == 96; // checks if SHA-1 hash has 96 hexadecimal bytes, or 384 bits
+    }
+    private boolean SH512LC(String s){
+        return sha512Hex(s).length() == 128; // checks if SHA-1 hash has 128 hexadecimal bytes, or 512 bits
+    }
+    private void HashCheck(String s){
         if (!SH1LC(s) || !SH256LC(s) || !SH384LC(s) || !SH512LC(s)) {
-            System.out.println("Error: Invalid String!");
-        } else {
-            System.out.println("Yay!");
+            System.out.println("Off to the Pit of Misery!"); // The algorithms don't work.
         }
-    } public static void main(String[] args) {
-        String eins = "Hey Mario! Look what I made!";
-        String zwei = "It's a stone Luigi! You didn't make it!";
-        String drei = "It's a football! I chiseled it!";
-        String vier = "Well, what are you waiting for? Throw me a pass!";
-        HashCheck(eins);
-        HashCheck(zwei);
-        HashCheck(drei);
-        HashCheck(vier);
+        else {
+            System.out.println("Yay!"); // The algorithms work! Dilly dilly!
+        }
+    }
+    public static void main(String[] args) {
+        Lesson1A pgm = new Lesson1A(); // creates instance of class
+        // pgm is short for program
+        String eins = "The cake is a lie!"; // eins is German for 1
+        String zwei = "I like turtles!"; // zwei is German for 2
+        String drei = "It's a me! Mario!"; // drei is German for 3
+        String vier = "Game Over Yeah!!!!!!!!!!!"; // vier is German for 4
+        pgm.HashCheck(eins);
+        pgm.HashCheck(zwei);
+        pgm.HashCheck(drei);
+        pgm.HashCheck(vier);
     }
 }
