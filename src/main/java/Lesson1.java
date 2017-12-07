@@ -1,3 +1,4 @@
+package org.gigatron4624;
 // This program uses secure hash algorithms to transmogrify various strings to hexadecimal hash values.
 import static org.apache.commons.codec.digest.DigestUtils.sha1Hex; // imports SHA-1 from Commons Codec repository
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex; // imports SHA-256 from Commons Codec repository
@@ -44,7 +45,7 @@ public class Lesson1{
     }
 
     public static void main(String[] args) {
-        Lesson1 code = new Lesson1(); // instance of class Lesson1
+        Lesson1 code = new Lesson1(); // instance of class org.gigatron4624.Lesson1
         String eins = "Hey Mario! Look what I made!"; // eins is German for one
         String zwei = "It's a stone Luigi! You didn't make it!"; // zwei is German for two
         String drei = "It's a football! I chiseled it!"; // drei is German for three
