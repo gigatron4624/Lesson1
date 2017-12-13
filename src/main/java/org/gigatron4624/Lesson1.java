@@ -1,5 +1,5 @@
 package org.gigatron4624;
-// This program uses secure hash algorithms to transmogrify various strings to hexadecimal hash values.
+/* This program uses secure hash algorithms to transmogrify various strings to hexadecimal hash values. */
 
 import static org.apache.commons.codec.digest.DigestUtils.sha1Hex;
 import static org.apache.commons.codec.digest.DigestUtils.sha256Hex;
@@ -7,38 +7,40 @@ import static org.apache.commons.codec.digest.DigestUtils.sha384Hex;
 import static org.apache.commons.codec.digest.DigestUtils.sha512Hex;
 
 public class Lesson1{
-    // SHA stands for Secure Hash Algorithm. Secure hash algorithms
-    // Zahl is the German word for number.
-    // hexus: hex = hexadecimal, u = unique, s = string
-    // transmogrify: another word for convert or transform
+    /* SHA stands for Secure Hash Algorithm. Secure hash algorithms accept inputs and returns hash values.
+    * Zahl is the German translation of number.
+    * hexus: hex = hexadecimal, u = unique, s = string
+    * transmogrify: to convert or transform */
 
     /* Private Methods */
 
-    // uses SHA-1 to create a 160-bit hexadecimal string
+    /* hexus1: uses SHA-1 to create a 160-bit hexadecimal string */
     private String hexus1(String Zahl){
         // transmogrifies input string to a hexadecimal string through DigestUtils.sha1Hex()
         return sha1Hex(Zahl);
     }
 
-    // uses SHA-256 to create a 256-bit hexadecimal string
+    /* hexus256: uses SHA-256 to create a 256-bit hexadecimal string */
     private String hexus256(String Zahl) {
         // transmogrifies input string to a hexadecimal string through DigestUtils.sha256Hex()
         return sha256Hex(Zahl);
     }
 
-    // uses SHA-384 to create a 384-bit hexadecimal string
+    /* hexus384: uses SHA-384 to create a 384-bit hexadecimal string */
     private String hexus384(String Zahl) {
         // transmogrifies input string to a hexadecimal string through DigestUtils.sha384Hex()
         return sha384Hex(Zahl);
     }
 
-    // uses SHA-512 to create a 512-bit hexadecimal string
+    /* hexus512: uses SHA-512 to create a 512-bit hexadecimal string */
     private String hexus512(String Zahl) {
         // transmogrifies input string to a hexadecimal string through DigestUtils.sha512Hex()
         return sha512Hex(Zahl);
     }
 
-    // hd is short for hexadecimal, not high-definition
+    /* hd is short for hexadecimal, not high-definition
+    * hd: calculates the lengths of original string and hex strings
+    * this method also prints strings and lengths as outputs */
     private void hd(String s){
 
         String hd1 = hexus1(s); // assigns hexadecimal representation of SHA1 string to variable
@@ -52,15 +54,15 @@ public class Lesson1{
         int SL384 = hd384.length(); // determines and stores the length of hexadecimal SHA384 string
         int SL512 = hd512.length(); // determines and stores the length of hexadecimal SHA512 string
 
-        // prints original string and hex strings to screen
+        // prints original string and hex strings to screen on separate lines
         System.out.printf(s + "%n" + hd1 + "%n" + hd256 + "%n" + hd384 + "%n" + hd512);
 
-        // prints length of each string to screen
+        // prints length of each string to screen on separate lines
         System.out.printf("%n" + SL0 + "%n" + SL1 + "%n" + SL256 + "%n" + SL384 + "%n" + SL512);
     }
 
     /* Main Method */
-    /* */
+    /* The main method contains the sample string and calls the hd method */
     public static void main(String[] args) {
 
         // instance of class org.gigatron4624.Lesson1; circumvents usage of static
